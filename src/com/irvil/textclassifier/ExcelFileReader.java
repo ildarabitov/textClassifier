@@ -24,7 +24,6 @@ class ExcelFileReader {
 
     try (XSSFWorkbook excelFile = new XSSFWorkbook(new FileInputStream(xlsxFile))) {
       XSSFSheet sheet = excelFile.getSheetAt(sheetNumber - 1);
-
       // at least two rows
       if (sheet.getLastRowNum() > 0) {
         return getClassifiableTexts(sheet);
