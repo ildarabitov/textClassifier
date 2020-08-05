@@ -37,12 +37,12 @@ class ExcelFileReader {
   }
 
   private List<ClassifiableText> getClassifiableTexts(XSSFSheet sheet) {
-    List<Characteristic> characteristics = getCharacteristics(sheet);
+    List<Characteristic> characteristics = getCharacteristics(sheet); // name columns
     List<ClassifiableText> classifiableTexts = new ArrayList<>();
 
     // start from second row
     for (int i = 1; i <= sheet.getLastRowNum(); i++) {
-      Map<Characteristic, CharacteristicValue> characteristicsValues = getCharacteristicsValues(sheet.getRow(i), characteristics);
+      Map<Characteristic, CharacteristicValue> characteristicsValues = getCharacteristicsValues(sheet.getRow(i), characteristics);//naming columns with description
 
       // exclude empty rows
       if (!sheet.getRow(i).getCell(0).getStringCellValue().equals("")) {
