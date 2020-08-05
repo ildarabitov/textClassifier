@@ -35,7 +35,6 @@ class ExcelFileReader {
       throw new EmptySheetException("Excel sheet (#" + sheetNumber + ") is not found");
     }
   }
-
   private List<ClassifiableText> getClassifiableTexts(XSSFSheet sheet) {
     List<Characteristic> characteristics = getCharacteristics(sheet); // name columns
     List<ClassifiableText> classifiableTexts = new ArrayList<>();
